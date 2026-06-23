@@ -1,0 +1,41 @@
+<!-- СЕКЦИЯ «СВЯЗАТЬСЯ С НАМИ» -->
+<section id="contact" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Остались вопросы?</h2>
+            <p class="lead text-secondary">Напиши нам — ответим в течение часа</p>
+        </div>
+        <div class="mx-auto" style="max-width: 600px;">
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label fw-semibold">Имя</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" id="name" placeholder="Алексей" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-envelope"></i></span>
+                        <input type="email" class="form-control" id="email" placeholder="alex@example.com" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="form-label fw-semibold">Сообщение</label>
+                    <textarea class="form-control" id="message" rows="4" 
+                              placeholder="Расскажи, что тебя интересует..." required></textarea>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+                        <i class="bi bi-send-fill me-2"></i>Отправить
+                    </button>
+                </div>
+                <p class="text-center text-muted small mt-2">
+                    <i class="bi bi-lock-fill me-1"></i>
+                    Твои данные не будут переданы третьим лицам
+                </p>
+            </form>
+        </div>
+    </div>
+</section>

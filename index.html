@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindFlow — умные заметки с AI</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- НАВБАР -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-lightbulb-fill text-warning"></i> MindFlow
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#features">Возможности</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Тарифы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-primary rounded-pill px-4" href="#contact">Попробовать</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ГЕРОЙ -->
+        <section class="hero-section d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h1 class="display-4 fw-bold mb-3">Заметки, которые <span class="text-primary">понимают</span> тебя</h1>
+                        <p class="lead text-secondary mb-4">
+                            MindFlow использует AI, чтобы превращать голосовые заметки в структурированные списки задач, конспекты и напоминания. Просто говори — приложение сделает всё остальное.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">
+                                <i class="bi bi-rocket-takeoff-fill me-2"></i>Начать бесплатно
+                            </a>
+                            <a href="#features" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                                <i class="bi bi-play-circle me-2"></i>Как это работает
+                            </a>
+                        </div>
+                        <div class="d-flex mt-4 text-muted small">
+                            <span class="me-4"><i class="bi bi-star-fill text-warning"></i> 4.9 рейтинг</span>
+                            <span class="me-4"><i class="bi bi-people-fill"></i> 50 000+ пользователей</span>
+                            <span><i class="bi bi-shield-check-fill text-success"></i> Бесплатный тариф</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="https://placehold.co/600x400/6f42c1/white?text=MindFlow+App+Preview" 
+                             alt="Превью приложения MindFlow" class="img-fluid rounded-4 shadow-lg"
+                             width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ВОЗМОЖНОСТИ -->
+        <section id="features" class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Что умеет MindFlow</h2>
+                    <p class="lead text-secondary">Три кита, на которых держится наше приложение</p>
+                </div>
+                <div class="row g-4 row-cols-1 row-cols-md-3">
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm text-center p-4">
+                            <div class="card-icon bg-primary bg-opacity-10 text-primary rounded-3 d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px;">
+                                <i class="bi bi-mic-fill fs-3"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Голосовой ввод</h5>
+                                <p class="card-text text-secondary">Надиктовывай мысли на ходу — AI распознаёт речь на 40+ языках и превращает её в текст с точностью 98%.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm text-center p-4">
+                            <div class="card-icon bg-success bg-opacity-10 text-success rounded-3 d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px;">
+                                <i class="bi bi-diagram-3-fill fs-3"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Автоструктурирование</h5>
+                                <p class="card-text text-secondary">MindFlow сам разбивает поток сознания на задачи, темы и подпункты. Хаос становится списком дел за секунды.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm text-center p-4">
+                            <div class="card-icon bg-warning bg-opacity-10 text-warning rounded-3 d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px;">
+                                <i class="bi bi-search-heart-fill fs-3"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Умный поиск</h5>
+                                <p class="card-text text-secondary">Забудь про теги и папки. Ищи заметки по смыслу, а не по словам — AI понимает контекст твоих записей.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ТАРИФЫ -->
+        <section id="pricing" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Выбери свой план</h2>
+                    <p class="lead text-secondary">Начни бесплатно. Апгрейднись, когда понадобится больше.</p>
+                </div>
+                <div id="pricing-cards" class="row g-4 row-cols-1 row-cols-md-3 justify-content-center"></div>
+                <p class="text-center text-muted small mt-4">
+                    <i class="bi bi-shield-check me-1"></i>Можно отменить в любой момент. Никаких скрытых платежей.
+                </p>
+            </div>
+        </section>
+
+        <!-- ОТЗЫВЫ -->
+        <section id="testimonials" class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Что говорят пользователи</h2>
+                    <p class="lead text-secondary">Присоединяйся к 50 000+ довольных людей</p>
+                </div>
+                <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div id="testimonials-slides" class="carousel-inner"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущий</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующий</span>
+                    </button>
+                    <div id="testimonials-indicators" class="carousel-indicators position-relative mt-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Частые вопросы</h2>
+                    <p class="lead text-secondary">На случай, если ты тоже об этом думаешь</p>
+                </div>
+                <div id="faq-list" class="accordion mx-auto" style="max-width: 800px;"></div>
+                <p class="text-center mt-4">Не нашли ответа? <a href="#contact" class="fw-bold">Напишите нам <i class="bi bi-arrow-right"></i></a></p>
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ -->
+        <section id="contact" class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Остались вопросы?</h2>
+                    <p class="lead text-secondary">Напиши нам — ответим в течение часа</p>
+                </div>
+                <div class="mx-auto" style="max-width: 600px;">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-semibold">Имя</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" id="name" placeholder="Алексей" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" id="email" placeholder="alex@example.com" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label fw-semibold">Сообщение</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Расскажи, что тебя интересует..." required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+                                <i class="bi bi-send-fill me-2"></i>Отправить
+                            </button>
+                        </div>
+                        <p class="text-center text-muted small mt-2">
+                            <i class="bi bi-lock-fill me-1"></i>Твои данные не будут переданы третьим лицам
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-lightbulb-fill text-warning"></i> MindFlow</h5>
+                    <p class="text-secondary small">Умные заметки с AI, которые понимают тебя. Создавай, структурируй и находи — голосом и текстом.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white-50 fs-5" title="Telegram"><i class="bi bi-telegram"></i></a>
+                        <a href="#" class="text-white-50 fs-5" title="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="text-white-50 fs-5" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white-50 fs-5" title="GitHub"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Навигация</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#features" class="text-secondary text-decoration-none">Возможности</a></li>
+                        <li class="mb-2"><a href="#pricing" class="text-secondary text-decoration-none">Тарифы</a></li>
+                        <li class="mb-2"><a href="#testimonials" class="text-secondary text-decoration-none">Отзывы</a></li>
+                        <li class="mb-2"><a href="#faq" class="text-secondary text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-secondary text-decoration-none">Связаться с нами</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Контакты</h6>
+                    <ul class="list-unstyled small text-secondary">
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i>hello@mindflow.app</li>
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Москва, Россия</li>
+                        <li class="mb-2"><i class="bi bi-clock me-2"></i>Поддержка 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary">
+                <p class="mb-2 mb-md-0">© 2026 MindFlow. Все права защищены.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-secondary text-decoration-none">Политика конфиденциальности</a>
+                    <a href="#" class="text-secondary text-decoration-none">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
