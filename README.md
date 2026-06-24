@@ -5,7 +5,7 @@
   
   **Умные заметки с AI — лендинг SaaS-продукта**
   
-  [![GitHub Pages](https://img.shields.io/badge/Демо-GitHub%20Pages-6f42c1?style=for-the-badge&logo=github)](https://твой-логин.github.io/mindflow/)
+  [![GitHub Pages](https://img.shields.io/badge/Демо-GitHub%20Pages-6f42c1?style=for-the-badge&logo=github)](https://doctorstrangesh.github.io/MindFlow/)
   [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com)
   [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/ru/docs/Web/JavaScript)
 </div>
