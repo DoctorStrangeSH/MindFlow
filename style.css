@@ -49,7 +49,6 @@
 /* ----- 2. ПЛАВНЫЙ СКРОЛЛ К ЯКОРЯМ ----- */
 html {
     scroll-behavior: smooth;
-    /* Компенсация высоты sticky-навбара, чтобы заголовок не прятался */
     scroll-padding-top: 80px;
 }
 
@@ -66,12 +65,11 @@ html {
 .hero-section {
     background: linear-gradient(135deg, #f5f3ff 0%, #e2d9f3 50%, #ffffff 100%);
     min-height: 90vh;
-    /* Лёгкий «шум» для глубины */
     position: relative;
     overflow: hidden;
 }
 
-/* Декоративный размытый круг в фоне героя (чисто для красоты) */
+/* Декоративный размытый круг в фоне героя */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -204,7 +202,6 @@ footer .bi:hover {
 
 
 /* ----- 11. АНИМАЦИЯ ПОЯВЛЕНИЯ СЕКЦИЙ ----- */
-/* Лёгкий fade-in при скролле (работает только в современных браузерах) */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -221,7 +218,6 @@ main > section {
     animation: fadeInUp 0.7s ease forwards;
 }
 
-/* Чтобы анимация не срабатывала рывком при загрузке */
 main > section:nth-child(1) { animation-delay: 0.1s; }
 main > section:nth-child(2) { animation-delay: 0.2s; }
 main > section:nth-child(3) { animation-delay: 0.3s; }
@@ -231,20 +227,87 @@ main > section:nth-child(6) { animation-delay: 0.6s; }
 
 
 /* ----- 12. МЕЛОЧИ ----- */
-
-/* Стили для блока с микростатистикой в герое */
 .hero-section .text-muted .bi {
     font-size: 1rem;
 }
 
-/* Разделитель в футере */
 footer hr {
     opacity: 0.3;
 }
 
-/* Улучшаем читаемость на широких экранах */
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
+}
+
+/* ----- 13. НОВЫЕ СТИЛИ ДЛЯ УЛУЧШЕНИЙ ----- */
+
+/* Иллюстрация в герое */
+.hero-image {
+    max-height: 400px;
+    filter: drop-shadow(0 10px 30px rgba(111, 66, 193, 0.2));
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+    transform: translateY(-10px);
+}
+
+/* Секция «Как работает» — номера шагов */
+.step-number {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-number:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
+}
+
+/* Линия между шагами (только на десктопе) */
+@media (min-width: 768px) {
+    #how-it-works .col-md-4:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 28px;
+        right: -15px;
+        width: 30px;
+        height: 2px;
+        background: #dee2e6;
+    }
+    
+    #how-it-works .col-md-4 {
+        position: relative;
+    }
+}
+
+/* Логотип в навбаре */
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+/* Статус формы */
+#form-status {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#form-status.text-success {
+    background-color: rgba(25, 135, 84, 0.1);
+}
+
+#form-status.text-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Кнопка отправки — состояние загрузки */
+#submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }

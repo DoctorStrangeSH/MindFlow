@@ -1,26 +1,15 @@
-<!-- СЕКЦИЯ «ОТЗЫВЫ» — только карусель-контейнер, слайды из JS -->
+<!-- ОТЗЫВЫ — контейнер, слайды из JS -->
 <section id="testimonials" class="py-5 bg-white">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold">Что говорят пользователи</h2>
             <p class="lead text-secondary">Присоединяйся к 50 000+ довольных людей</p>
         </div>
-        
         <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div id="testimonials-slides" class="carousel-inner">
-                <!-- Рендерится из js/data.js -->
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
-            <div id="testimonials-indicators" class="carousel-indicators position-relative mt-4">
-                <!-- Рендерится из js/main.js -->
-            </div>
+            <div id="testimonials-slides" class="carousel-inner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span><span class="visually-hidden">Предыдущий</span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span><span class="visually-hidden">Следующий</span></button>
+            <div id="testimonials-indicators" class="carousel-indicators position-relative mt-4"></div>
         </div>
     </div>
 </section>

@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindFlow — умные заметки с AI</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="MindFlow — умные заметки с AI">
+    <meta property="og:description" content="Превращай голосовые заметки в структурированные задачи с помощью AI. Попробуй бесплатно!">
+    <meta property="og:image" content="https://placehold.co/1200x630/6f42c1/white?text=MindFlow">
+    <meta property="og:type" content="website">
+    
+    <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Кастомные стили -->
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -14,8 +29,9 @@
     <!-- НАВБАР -->
     <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="bi bi-lightbulb-fill text-warning"></i> MindFlow
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                <img src="assets/favicon.svg" alt="MindFlow" width="32" height="32" class="me-2">
+                MindFlow
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
                     aria-controls="navbarMain" aria-expanded="false" aria-label="Открыть меню">
@@ -24,6 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="#features">Возможности</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works">Как работает</a></li>
                     <li class="nav-item"><a class="nav-link" href="#pricing">Тарифы</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Отзывы</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
@@ -40,16 +57,20 @@
         <section class="hero-section d-flex align-items-center">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 mb-5 mb-lg-0">
-                        <h1 class="display-4 fw-bold mb-3">Заметки, которые <span class="text-primary">понимают</span> тебя</h1>
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="800">
+                        <h1 class="display-4 fw-bold mb-3">
+                            Заметки, которые <span class="text-primary">понимают</span> тебя
+                        </h1>
                         <p class="lead text-secondary mb-4">
-                            MindFlow использует AI, чтобы превращать голосовые заметки в структурированные списки задач, конспекты и напоминания. Просто говори — приложение сделает всё остальное.
+                            MindFlow использует AI, чтобы превращать голосовые заметки 
+                            в структурированные списки задач, конспекты и напоминания. 
+                            Просто говори — приложение сделает всё остальное.
                         </p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">
+                            <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4 shadow-lg">
                                 <i class="bi bi-rocket-takeoff-fill me-2"></i>Начать бесплатно
                             </a>
-                            <a href="#features" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                            <a href="#how-it-works" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
                                 <i class="bi bi-play-circle me-2"></i>Как это работает
                             </a>
                         </div>
@@ -59,10 +80,15 @@
                             <span><i class="bi bi-shield-check-fill text-success"></i> Бесплатный тариф</span>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img src="https://placehold.co/600x400/6f42c1/white?text=MindFlow+App+Preview" 
-                             alt="Превью приложения MindFlow" class="img-fluid rounded-4 shadow-lg"
-                             width="600" height="400" loading="lazy">
+                    <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                        <!-- Иллюстрация из unDraw -->
+                        <img 
+                            src="https://illustrations.popsy.co/violet/working-from-anywhere.svg"
+                            alt="MindFlow — работай отовсюду" 
+                            class="img-fluid hero-image"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x400/6f42c1/white?text=MindFlow'"
+                        >
                     </div>
                 </div>
             </div>
@@ -71,12 +97,12 @@
         <!-- ВОЗМОЖНОСТИ -->
         <section id="features" class="py-5 bg-white">
             <div class="container">
-                <div class="text-center mb-5">
+                <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="fw-bold">Что умеет MindFlow</h2>
-                    <p class="lead text-secondary">Три кита, на которых держится наше приложение</p>
+                    <p class="lead text-secondary">Три главных преимущества нашего приложения</p>
                 </div>
                 <div class="row g-4 row-cols-1 row-cols-md-3">
-                    <div class="col">
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
                         <div class="card h-100 border-0 shadow-sm text-center p-4">
                             <div class="card-icon bg-primary bg-opacity-10 text-primary rounded-3 d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px;">
                                 <i class="bi bi-mic-fill fs-3"></i>
@@ -87,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
                         <div class="card h-100 border-0 shadow-sm text-center p-4">
                             <div class="card-icon bg-success bg-opacity-10 text-success rounded-3 d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px;">
                                 <i class="bi bi-diagram-3-fill fs-3"></i>
@@ -98,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
                         <div class="card h-100 border-0 shadow-sm text-center p-4">
                             <div class="card-icon bg-warning bg-opacity-10 text-warning rounded-3 d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px;">
                                 <i class="bi bi-search-heart-fill fs-3"></i>
@@ -113,10 +139,43 @@
             </div>
         </section>
 
-        <!-- ТАРИФЫ -->
-        <section id="pricing" class="py-5 bg-light">
+        <!-- КАК ЭТО РАБОТАЕТ (НОВАЯ СЕКЦИЯ) -->
+        <section id="how-it-works" class="py-5 bg-light">
             <div class="container">
-                <div class="text-center mb-5">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="fw-bold">Как это работает</h2>
+                    <p class="lead text-secondary">Три простых шага к продуктивности</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="position-relative d-inline-block mb-3">
+                            <span class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 56px; height: 56px; font-size: 1.5rem; font-weight: bold;">1</span>
+                        </div>
+                        <h5 class="fw-bold">Говори или пиши</h5>
+                        <p class="text-secondary">Надиктуй заметку голосом или набери текстом — MindFlow поддерживает оба способа.</p>
+                    </div>
+                    <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="position-relative d-inline-block mb-3">
+                            <span class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 56px; height: 56px; font-size: 1.5rem; font-weight: bold;">2</span>
+                        </div>
+                        <h5 class="fw-bold">AI обрабатывает</h5>
+                        <p class="text-secondary">Нейросеть анализирует текст, выделяет задачи, темы и ключевые мысли за секунды.</p>
+                    </div>
+                    <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="position-relative d-inline-block mb-3">
+                            <span class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 56px; height: 56px; font-size: 1.5rem; font-weight: bold;">3</span>
+                        </div>
+                        <h5 class="fw-bold">Готовый результат</h5>
+                        <p class="text-secondary">Получай структурированный конспект с задачами и напоминаниями на всех устройствах.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ТАРИФЫ -->
+        <section id="pricing" class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="fw-bold">Выбери свой план</h2>
                     <p class="lead text-secondary">Начни бесплатно. Апгрейднись, когда понадобится больше.</p>
                 </div>
@@ -128,13 +187,13 @@
         </section>
 
         <!-- ОТЗЫВЫ -->
-        <section id="testimonials" class="py-5 bg-white">
+        <section id="testimonials" class="py-5 bg-light">
             <div class="container">
-                <div class="text-center mb-5">
+                <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="fw-bold">Что говорят пользователи</h2>
                     <p class="lead text-secondary">Присоединяйся к 50 000+ довольных людей</p>
                 </div>
-                <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up" data-aos-delay="100">
                     <div id="testimonials-slides" class="carousel-inner"></div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
@@ -150,9 +209,9 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="py-5 bg-light">
+        <section id="faq" class="py-5 bg-white">
             <div class="container">
-                <div class="text-center mb-5">
+                <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="fw-bold">Частые вопросы</h2>
                     <p class="lead text-secondary">На случай, если ты тоже об этом думаешь</p>
                 </div>
@@ -162,37 +221,38 @@
         </section>
 
         <!-- КОНТАКТЫ -->
-        <section id="contact" class="py-5 bg-white">
+        <section id="contact" class="py-5 bg-light">
             <div class="container">
-                <div class="text-center mb-5">
+                <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="fw-bold">Остались вопросы?</h2>
                     <p class="lead text-secondary">Напиши нам — ответим в течение часа</p>
                 </div>
-                <div class="mx-auto" style="max-width: 600px;">
-                    <form>
+                <div class="mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-delay="100">
+                    <form action="https://formspree.io/f/xlgygdqd" method="POST" id="contact-form">
                         <div class="mb-3">
                             <label for="name" class="form-label fw-semibold">Имя</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control" id="name" placeholder="Алексей" required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Владислав" required>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label fw-semibold">Email</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-white"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control" id="email" placeholder="alex@example.com" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="vladislav@example.com" required>
                             </div>
                         </div>
                         <div class="mb-4">
                             <label for="message" class="form-label fw-semibold">Сообщение</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Расскажи, что тебя интересует..." required></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Расскажи, что тебя интересует..." required></textarea>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill" id="submit-btn">
                                 <i class="bi bi-send-fill me-2"></i>Отправить
                             </button>
                         </div>
+                        <div id="form-status" class="text-center small mt-3" style="display: none;"></div>
                         <p class="text-center text-muted small mt-2">
                             <i class="bi bi-lock-fill me-1"></i>Твои данные не будут переданы третьим лицам
                         </p>
@@ -207,7 +267,7 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3"><i class="bi bi-lightbulb-fill text-warning"></i> MindFlow</h5>
+                    <h5 class="fw-bold mb-3"><img src="assets/favicon.svg" alt="MindFlow" width="24" height="24" class="me-2">MindFlow</h5>
                     <p class="text-secondary small">Умные заметки с AI, которые понимают тебя. Создавай, структурируй и находи — голосом и текстом.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="text-white-50 fs-5" title="Telegram"><i class="bi bi-telegram"></i></a>
@@ -220,6 +280,7 @@
                     <h6 class="fw-bold mb-3">Навигация</h6>
                     <ul class="list-unstyled small">
                         <li class="mb-2"><a href="#features" class="text-secondary text-decoration-none">Возможности</a></li>
+                        <li class="mb-2"><a href="#how-it-works" class="text-secondary text-decoration-none">Как работает</a></li>
                         <li class="mb-2"><a href="#pricing" class="text-secondary text-decoration-none">Тарифы</a></li>
                         <li class="mb-2"><a href="#testimonials" class="text-secondary text-decoration-none">Отзывы</a></li>
                         <li class="mb-2"><a href="#faq" class="text-secondary text-decoration-none">FAQ</a></li>
@@ -246,7 +307,12 @@
         </div>
     </footer>
 
+    <!-- Скрипты -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 </body>
