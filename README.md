@@ -12,14 +12,6 @@
 
 ---
 
-## 📸 Скриншоты
-
-<div align="center">
-  <img src="https://placehold.co/600x340/6f42c1/white?text=Hero+Section" alt="Hero" width="45%">
-  <img src="https://placehold.co/600x340/6f42c1/white?text=Pricing+Section" alt="Pricing" width="45%">
-</div>
-
----
 
 ## 📋 О проекте
 
@@ -79,4 +71,9 @@
 
 ---
 
-## 📁 Архитектура
+## 🔧 Быстрый старт
+
+```bash
+git clone https://doctorstrangesh.github.io/MindFlow/
+cd mindflow
+# Открой index.html через Live Server
