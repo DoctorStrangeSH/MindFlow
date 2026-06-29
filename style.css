@@ -3,9 +3,23 @@
    Поверх Bootstrap 5.3
    ============================================ */
 
+/* Глобальный сброс для скролл-контейнеров */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Плавный скролл для всех скролл-контейнеров */
+.pricing-scroll,
+.how-it-works-scroll,
+#features-cards {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+
 /* ----- 1. ПЕРЕМЕННЫЕ: Переопределяем цвета Bootstrap ----- */
 :root {
-    --bs-primary: #6f42c1;        /* Фиолетовый вместо синего */
+    --bs-primary: #6f42c1;
     --bs-primary-rgb: 111, 66, 193;
     --bs-secondary: #6c757d;
     --bs-body-color: #212529;
@@ -40,24 +54,50 @@
     background-color: #6f42c1 !important;
 }
 
-/* Ссылки в навбаре при наведении */
 .nav-link:hover {
     color: #6f42c1 !important;
 }
 
 
-/* ----- 2. ПЛАВНЫЙ СКРОЛЛ К ЯКОРЯМ ----- */
+/* ----- 2. ПЛАВНЫЙ СКРОЛЛ ----- */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
 }
 
 
-/* ----- 3. НАВБАР: лёгкое затемнение при скролле ----- */
+/* ----- 3. НАВБАР ----- */
 .navbar {
     transition: box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.95) !important;
+    min-height: 70px;
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+/* Мобильное меню — плавное появление */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        transition: all 0.3s ease;
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem !important;
+        font-size: 1.1rem;
+        border-radius: 8px;
+    }
+
+    .nav-link:active {
+        background-color: rgba(111, 66, 193, 0.1);
+    }
 }
 
 
@@ -67,9 +107,9 @@ html {
     min-height: 90vh;
     position: relative;
     overflow: hidden;
+    padding: 4rem 0;
 }
 
-/* Декоративный размытый круг в фоне героя */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -82,21 +122,115 @@ html {
     pointer-events: none;
 }
 
-
-/* ----- 5. КАРТОЧКИ ВОЗМОЖНОСТЕЙ: эффект при наведении ----- */
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 16px !important;
+.hero-image {
+    max-height: 400px;
+    filter: drop-shadow(0 10px 30px rgba(111, 66, 193, 0.2));
+    transition: transform 0.5s ease;
 }
 
-.card:hover {
+.hero-image:hover {
+    transform: translateY(-10px);
+}
+
+/* Мобильная адаптация героя */
+@media (max-width: 767.98px) {
+    .hero-section {
+        min-height: auto;
+        padding: 3rem 0 2rem;
+        text-align: center;
+    }
+
+    .hero-section .display-4 {
+        font-size: 2.25rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn-lg {
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .hero-section .d-flex.flex-wrap.gap-3 {
+        flex-direction: column;
+    }
+}
+
+
+/* ----- 5. ВОЗМОЖНОСТИ ----- */
+/* На десктопе — обычная сетка Bootstrap */
+@media (min-width: 768px) {
+    #features-cards {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -0.75rem;
+        margin-left: -0.75rem;
+    }
+
+    #features-cards .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+}
+
+/* На мобильных — горизонтальный скролл */
+@media (max-width: 767.98px) {
+    #features-cards {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1rem;
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1rem;
+    }
+
+    #features-cards::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    #features-cards::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    #features-cards::-webkit-scrollbar-thumb {
+        background: #6f42c1;
+        border-radius: 10px;
+    }
+
+    #features-cards .col-md-4 {
+        flex: 0 0 280px;
+        max-width: 280px;
+        scroll-snap-align: start;
+        padding: 0;
+    }
+}
+
+/* Стили карточек */
+#features-cards .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px !important;
+    cursor: default;
+    height: 100%;
+}
+
+#features-cards .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* Иконки внутри карточек */
 .card-icon {
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .card:hover .card-icon {
@@ -104,13 +238,217 @@ html {
 }
 
 
-/* ----- 6. АККОРДЕОН FAQ ----- */
+/* ----- 6. СЕКЦИЯ «КАК ЭТО РАБОТАЕТ» ----- */
+.how-it-works-scroll {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+/* На десктопе — сетка с линиями */
+@media (min-width: 768px) {
+    .how-it-works-scroll {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Линия между шагами */
+    .how-it-works-scroll::after {
+        content: '';
+        position: absolute;
+        top: 60px;
+        /* 2rem (padding-top) + 28px (половина кружка 56px) = 32px + 28px = 60px */
+        left: calc(100% / 6);
+        right: calc(100% / 6);
+        height: 2px;
+        background: linear-gradient(to right,
+                #dee2e6 0%,
+                #6f42c1 50%,
+                #dee2e6 100%);
+        z-index: 0;
+        pointer-events: none;
+    }
+}
+
+/* На мобильных — горизонтальный скролл */
+@media (max-width: 767.98px) {
+    .how-it-works-scroll {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1rem;
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .how-it-works-scroll::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .how-it-works-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .how-it-works-scroll::-webkit-scrollbar-thumb {
+        background: #6f42c1;
+        border-radius: 10px;
+    }
+
+    .how-it-works-scroll .step-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+}
+
+.step-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background-color: #6f42c1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover .step-number {
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
+}
+
+
+/* ----- 7. ТАРИФЫ — ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ НА МОБИЛЬНЫХ ----- */
+.pricing-scroll {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* На десктопе — центрированная сетка */
+@media (min-width: 992px) {
+    .pricing-scroll {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* На планшетах и мобильных — горизонтальный скролл */
+@media (max-width: 991.98px) {
+    .pricing-scroll {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 2rem 1rem 1.5rem;
+        /* Добавили верхний отступ для бейджа */
+        margin: 0 -1rem;
+    }
+
+    .pricing-scroll::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .pricing-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .pricing-scroll::-webkit-scrollbar-thumb {
+        background: #6f42c1;
+        border-radius: 10px;
+    }
+
+    .pricing-scroll .pricing-card {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+    }
+
+    /* Фикс для бейджа "Популярный" на мобильных */
+    .pricing-card .badge {
+        position: absolute !important;
+        top: -12px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 2;
+        white-space: nowrap;
+    }
+
+    /* Карточка Pro не должна обрезаться */
+    .pricing-card .card.border-primary {
+        margin-top: 0.5rem;
+    }
+}
+
+.pricing-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px !important;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.pricing-card .card.border-primary {
+    border-width: 2px !important;
+}
+
+/* На десктопе Pro карточка чуть крупнее */
+@media (min-width: 992px) {
+    .pricing-card .card.border-primary {
+        transform: scale(1.03);
+    }
+
+    .pricing-card .card.border-primary:hover {
+        transform: scale(1.03) translateY(-8px);
+    }
+}
+
+/* На мобильных все карточки одинакового размера */
+@media (max-width: 991.98px) {
+    .pricing-card .card.border-primary {
+        transform: none;
+    }
+
+    .pricing-card .card.border-primary:hover {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* ----- 8. АККОРДЕОН FAQ ----- */
 .accordion-button {
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 1.25rem;
 }
 
-/* Убираем стандартную обводку при фокусе, делаем свою */
 .accordion-button:focus {
     box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.25);
     border-color: transparent;
@@ -121,22 +459,58 @@ html {
     color: #ffffff;
 }
 
-/* Перекрашиваем шеврон в белый, когда раскрыт */
 .accordion-button:not(.collapsed)::after {
     filter: brightness(0) invert(1);
 }
 
+.accordion-body {
+    padding: 1.25rem;
+    line-height: 1.7;
+}
 
-/* ----- 7. КНОПКИ И ФОРМЫ ----- */
+/* Увеличенная область касания на мобильных */
+@media (max-width: 767.98px) {
+    .accordion-button {
+        padding: 1.5rem 1.25rem;
+        font-size: 1.05rem;
+    }
+}
+
+
+/* ----- 9. КНОПКИ И ФОРМЫ ----- */
 .form-control:focus,
 .form-select:focus {
     border-color: #6f42c1;
     box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.15);
 }
 
-/* Кнопки — добавляем лёгкую тень */
+.form-control.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
 .btn {
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Эффект волны при клике */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-primary {
@@ -148,7 +522,6 @@ html {
     transform: translateY(-2px);
 }
 
-/* Вторичные кнопки */
 .btn-outline-secondary:hover {
     transform: translateY(-2px);
 }
@@ -158,34 +531,74 @@ html {
     transform: translateY(-2px);
 }
 
+/* Статус формы */
+#form-status {
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 500;
+}
 
-/* ----- 8. КАРУСЕЛЬ ОТЗЫВОВ ----- */
+#form-status.text-success {
+    background-color: rgba(25, 135, 84, 0.1);
+}
+
+#form-status.text-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+#submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+
+/* ----- 10. КАРУСЕЛЬ ОТЗЫВОВ ----- */
+.carousel-indicators {
+    gap: 8px;
+}
+
 .carousel-indicators button {
     width: 12px !important;
     height: 12px !important;
     border-radius: 50% !important;
     border: none !important;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
+    background-color: #6f42c1 !important;
+    opacity: 0.3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-indicators button.active {
     opacity: 1;
+    transform: scale(1.3);
 }
 
-/* Аватарки в отзывах */
 .carousel-item img.rounded-circle {
     border: 3px solid #6f42c1;
+    object-fit: cover;
+}
+
+/* Свайп-подсказка на мобильных */
+@media (max-width: 767.98px) {
+    .carousel {
+        cursor: grab;
+    }
+
+    .carousel:active {
+        cursor: grabbing;
+    }
+
+    .carousel-item {
+        padding: 0 1rem;
+    }
+
+    .carousel-item .blockquote p {
+        font-size: 1rem !important;
+    }
 }
 
 
-/* ----- 9. ТАРИФЫ: выделение карточки Pro ----- */
-.card.border-primary {
-    border-width: 2px !important;
-}
-
-
-/* ----- 10. ФУТЕР ----- */
+/* ----- 11. ФУТЕР ----- */
 footer a:hover {
     color: #ffffff !important;
     transition: color 0.2s ease;
@@ -200,114 +613,104 @@ footer .bi:hover {
     color: #ffffff !important;
 }
 
-
-/* ----- 11. АНИМАЦИЯ ПОЯВЛЕНИЯ СЕКЦИЙ ----- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Применяем ко всем секциям внутри main */
-main > section {
-    animation: fadeInUp 0.7s ease forwards;
-}
-
-main > section:nth-child(1) { animation-delay: 0.1s; }
-main > section:nth-child(2) { animation-delay: 0.2s; }
-main > section:nth-child(3) { animation-delay: 0.3s; }
-main > section:nth-child(4) { animation-delay: 0.4s; }
-main > section:nth-child(5) { animation-delay: 0.5s; }
-main > section:nth-child(6) { animation-delay: 0.6s; }
-
-
-/* ----- 12. МЕЛОЧИ ----- */
-.hero-section .text-muted .bi {
-    font-size: 1rem;
-}
-
 footer hr {
     opacity: 0.3;
 }
 
+
+/* ----- 12. МОДАЛЬНОЕ ОКНО ----- */
+.modal-content {
+    border-radius: 16px;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 1.5rem;
+}
+
+
+/* ----- 13. ОБЩИЕ МОБИЛЬНЫЕ УЛУЧШЕНИЯ ----- */
+@media (max-width: 767.98px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+
+    h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .lead {
+        font-size: 1rem !important;
+    }
+
+    /* Увеличиваем область касания для интерактивных элементов */
+    .nav-link,
+    .btn,
+    .accordion-button {
+        min-height: 44px;
+    }
+
+    /* Адаптивные отступы */
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+/* Планшеты */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    section {
+        padding: 4rem 0 !important;
+    }
+}
+
+
+/* ----- 14. УТИЛИТЫ ----- */
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
 }
 
-/* ----- 13. НОВЫЕ СТИЛИ ДЛЯ УЛУЧШЕНИЙ ----- */
-
-/* Иллюстрация в герое */
-.hero-image {
-    max-height: 400px;
-    filter: drop-shadow(0 10px 30px rgba(111, 66, 193, 0.2));
-    transition: transform 0.5s ease;
-}
-
-.hero-image:hover {
-    transform: translateY(-10px);
-}
-
-/* Секция «Как работает» — номера шагов */
-.step-number {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.step-number:hover {
-    transform: scale(1.15);
-    box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
-}
-
-/* Линия между шагами (только на десктопе) */
-@media (min-width: 768px) {
-    #how-it-works .col-md-4:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        top: 28px;
-        right: -15px;
-        width: 30px;
-        height: 2px;
-        background: #dee2e6;
+/* Анимация появления секций */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    
-    #how-it-works .col-md-4 {
-        position: relative;
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Логотип в навбаре */
-.navbar-brand img {
-    transition: transform 0.3s ease;
+/* Применяем только если AOS не используется (фоллбэк) */
+@media (prefers-reduced-motion: no-preference) {
+    main>section {
+        animation: fadeInUp 0.7s ease forwards;
+    }
 }
 
-.navbar-brand:hover img {
-    transform: rotate(-10deg) scale(1.1);
-}
+/* Уважаем настройки доступности */
+@media (prefers-reduced-motion: reduce) {
 
-/* Статус формы */
-#form-status {
-    padding: 10px;
-    border-radius: 8px;
-}
-
-#form-status.text-success {
-    background-color: rgba(25, 135, 84, 0.1);
-}
-
-#form-status.text-danger {
-    background-color: rgba(220, 53, 69, 0.1);
-}
-
-/* Кнопка отправки — состояние загрузки */
-#submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
